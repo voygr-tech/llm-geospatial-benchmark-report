@@ -6,7 +6,7 @@ We tested **4 leading LLMs** on **345 real-world local search prompts** (finding
 
 This page presents the key findings. For the complete analysis (per-category breakdowns, full failure taxonomy, geographic gap deep dive, methodology details, and all 345 benchmark prompts), **[get the full report](#get-the-full-report)**.
 
-Disclosure: This benchmark came out of our work at VOYGR, where we're building an API to help address exactly these kinds of failures for AI agents and developers - verifying whether businesses LLMs recommend are actually open, at the right address, etc.
+Disclosure: This benchmark came out of our work at [VOYGR](https://voygr.tech), where we're building an API to help address exactly these kinds of failures for AI agents and developers - verifying whether businesses LLMs recommend are actually open, at the right address, etc.
 
 ---
 
