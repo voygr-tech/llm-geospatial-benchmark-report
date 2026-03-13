@@ -269,67 +269,40 @@ The complete analysis includes:
 
 **[Download the Full Report (PDF) →](https://PLACEHOLDER_EMAIL_CAPTURE_URL)**
 
-<style>
-  .report-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 30px 0;
-    max-width: 450px;
-    background: #fcfcfc;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #eaeaea;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-  }
-  .name-row {
-    display: flex;
-    gap: 15px;
-  }
-  .form-input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    outline: none;
-    box-sizing: border-box; /* Prevents inputs from overflowing */
-  }
-  .form-input:focus {
-    border-color: #48a9a6; /* Teal to match your chart */
-  }
-  .submit-button {
-    padding: 14px 20px;
-    background-color: #48a9a6;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
-    width: 100%;
-    margin-top: 5px;
-  }
-  .submit-button:hover {
-    background-color: #3b8c8a;
-  }
-</style>
-
-<form action="https://formspree.io/f/xzdjglpg" method="POST" class="report-form">
+<form id="pdf-form" action="https://formspree.io/f/xzdjglpg" method="POST" class="report-form">
   <div class="name-row">
     <input type="text" name="first_name" placeholder="First Name" required class="form-input">
     <input type="text" name="last_name" placeholder="Last Name" required class="form-input">
   </div>
-  
   <input type="text" name="company" placeholder="Company Name" required class="form-input">
-  
   <input type="email" name="email" placeholder="Work Email Address" required class="form-input">
-  
-  <input type="hidden" name="_next" value="https://github.com/ibukeev-voygr/llm-geospatial-benchmark-report/blob/main/Benchmarking_LLMs_on_Local_Search_Q1_2026_Consumer.pdf">
   
   <button type="submit" class="submit-button">Get the Full Report</button>
 </form>
+
+<script>
+  var form = document.getElementById("pdf-form");
+  
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // This stops Formspree's annoying redirect screen
+    
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // Form submitted silently! Now force the instant redirect to the raw PDF:
+        window.location.href = "https://raw.githubusercontent.com/ibukeev-voygr/llm-geospatial-benchmark-report/main/Benchmarking_LLMs_on_Local_Search_Q1_2026_Consumer.pdf";
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    });
+  });
+</script>
 
 ---
 
