@@ -1,3 +1,4 @@
   title: LLM Local Search Benchmark                               
-  baseurl: /llm-local-search-benchmark-report 
+  baseurl: /llm-local-search-benchmark-report
   theme: jekyll-theme-hacker
+  google_analytics: G-5NELVGYJD2
